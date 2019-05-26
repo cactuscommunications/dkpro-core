@@ -293,6 +293,9 @@ public class ConllUReader
                     surfaceEnd = Integer.valueOf(fragments[1]);
                     surfaceString = word[FORM];
                     continue;
+                } else if (word[ID].contains(".")) {
+//                    do nothing, this is an empty node
+                    continue;
                 }
 //                the following must be placed after check for dashes in ID in order not to insert
 //                unnecessary spaces

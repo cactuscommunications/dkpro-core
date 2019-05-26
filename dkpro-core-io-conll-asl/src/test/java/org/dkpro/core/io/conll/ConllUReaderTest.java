@@ -188,6 +188,23 @@ public class ConllUReaderTest
         assertSentence(sentences, select(jcas, Sentence.class));
     }
 
+    @Test
+    public void testEmptyNodes()
+            throws Exception
+    {
+        CollectionReaderDescription reader = createReaderDescription(
+                ConllUReader.class,
+                ConllUReader.PARAM_LANGUAGE, "en",
+                ConllUReader.PARAM_SOURCE_LOCATION, "src/test/resources/conll/u_v2/",
+                ConllUReader.PARAM_PATTERNS, "conllu-empty_nodes.conll");
+
+        JCas jcas = new JCasIterable(reader).iterator().next();
+
+        String[] sentences = {"Sue likes coffee and Bill tea"};
+
+        assertSentence(sentences, select(jcas, Sentence.class));
+    }
+
     @Rule
     public DkproTestContext testContext = new DkproTestContext();
 
