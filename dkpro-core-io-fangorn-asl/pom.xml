@@ -51,7 +51,7 @@
       <groupId>org.apache.lucene</groupId>
       <artifactId>lucene-core</artifactId>
       <!-- Fangorn requires this old version -->
-      <version>2.4.1</version>
+      <version>8.6.3</version>
     </dependency>
     <dependency>
       <groupId>org.dkpro.core</groupId>
